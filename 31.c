@@ -25,7 +25,7 @@ void inorder (ABin a, LInt * l) {
         
     } else {
         inorder(a->esq, l);
-        insereNaLInt(a->valor, l);   //vai inserir o nodo da root na LInt que ja tem os elementos da esq
+        insereNaLInt(a->valor, l);   //vai inserir o nodo da root na LInt 
         inorder(a->dir, l);
     }
 }
