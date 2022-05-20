@@ -4,9 +4,9 @@ int freeAB (ABin a) {
         return 0;
     } 
     
-    ABin aux = a;
+    int res = 1 + freeAB(a->esq) + freeAB(a->dir);
     
-    free(aux);
+    free(a);
 
-    return 1 + freeAB(a->esq) + freeAB(a->dir);
+    return res;
 }
