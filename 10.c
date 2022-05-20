@@ -9,7 +9,7 @@ int removeAll (LInt *l, int x){
             count++;
             prev->prox = current->prox;
             free(current);
-            current = current->prox;
+            current = prev->prox;
             
             
         }else{
