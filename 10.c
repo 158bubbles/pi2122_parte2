@@ -1,6 +1,6 @@
 int removeAll (LInt *l, int x){
     int count = 0;
-    LInt current = *l, prev = newLInt(0, *l), eliminado;
+    LInt current = *l, prev = newLInt(0, *l);
     *l = prev;
     
     while(current != NULL){
@@ -8,9 +8,9 @@ int removeAll (LInt *l, int x){
         if(current->valor == x){
             count++;
             prev->prox = current->prox;
-            eliminado = current;
+            free(current);
             current = current->prox;
-            free(eliminado);
+            
             
         }else{
             prev = prev->prox;
