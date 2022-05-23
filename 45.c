@@ -12,7 +12,7 @@ int lookupAB (ABin a, int x) {
         }
         
         if(x < current->valor){
-            current = current->dir;
+            current = current->esq;
         } else {
             current = current->dir;
         }
