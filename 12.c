@@ -15,26 +15,19 @@ int descobreMaior(LInt *l){
 
 
 int removeMaiorL (LInt *l){
-    LInt current = *l, prev = newLInt(0, *l), eliminado;
+    LInt current = *l, prev = newLInt(0, *l);
     int max = descobreMaior(l);
-    int flag = 0;
     
     *l = prev;   
     
-    while(current != NULL && flag == 0){
-        if(current->valor == max){
-            flag = 1;
-            prev->prox = current->prox;
-            eliminado = current;
-            free(eliminado);
-            current = current->prox;
-            
-            
-        } else {
-            prev = prev->prox;
-            current = current->prox;
-        }
+    while(current != NULL && current->valor != max){
+        prev = current;
+        current = current->prox;
     }
+    
+    prev->prox = current->prox;
+    free(current);
+    current = prev->prox;
     
     current = *l;
     *l = current->prox;
